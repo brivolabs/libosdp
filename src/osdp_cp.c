@@ -932,6 +932,7 @@ static int cp_phy_state_update(struct osdp_pd *pd)
 					pd->cmd_id);
 			}
 			osdp_phy_state_reset(pd, false);
+			osdp_phy_check_packet(pd);
 			cp_flush_command_queue(pd);
 			pd->phy_state = OSDP_CP_PHY_STATE_ERR;
 			ret = OSDP_CP_ERR_GENERIC;
